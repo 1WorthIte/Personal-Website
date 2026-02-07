@@ -1,12 +1,7 @@
-# Scrollable 3D Animation with Three.js
-
-- Watch the [full tutorial](https://youtu.be/Q7AOvWpIVHU) on YouTube
-- [Scrollable Three.js Animation](https://fireship.io/snippets/threejs-scrollbar-animation) Snippet
+# My personal three.js powered website! #
 
 ## Usage
 
-```
-git clone <this-repo>
-npm install
-npm run dev
-```
+Desktop-first
+Move the scene around with your mouse
+Click on stuff!
