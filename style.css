@@ -1,0 +1,145 @@
+@import url("https://use.typekit.net/jmk3xov.css");
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sci-label {
+  position: relative;
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d9fbff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #35f2ff;
+  background:
+    linear-gradient(135deg, rgba(10, 25, 40, 0.85), rgba(8, 60, 80, 0.65))
+    padding-box;
+  box-shadow:
+    0 0 12px rgba(53, 242, 255, 0.6),
+    0 0 30px rgba(36, 140, 255, 0.25),
+    inset 0 0 10px rgba(53, 242, 255, 0.3);
+  text-shadow:
+    0 0 8px rgba(53, 242, 255, 0.8),
+    0 0 18px rgba(36, 140, 255, 0.6);
+  backdrop-filter: blur(4px);
+  transform: translate(-50%, -120%);
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.sci-label.is-visible {
+  opacity: 1;
+}
+
+.sci-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 52px;
+  height: 2px;
+  transform-origin: left center;
+  transform: rotate(-35deg);
+  background: linear-gradient(90deg, #35f2ff, rgba(53, 242, 255, 0));
+  box-shadow: 0 0 10px rgba(53, 242, 255, 0.8);
+}
+
+.sci-label::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 22px;
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(53, 242, 255, 0), #35f2ff, rgba(53, 242, 255, 0));
+  box-shadow: 0 0 10px rgba(53, 242, 255, 0.8);
+}
+
+
+:root {
+  --spacing: 0px;
+
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+main {
+  width: 100vw;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 20px 0px;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+}
+
+h1, h2, h3, blockquote {
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+  header {
+    grid-column: 2 / span 4;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    margin-top: 0px;
+    margin-bottom: var(--spacing);
+  }
+
+  section {
+    grid-column: 1 / 7;
+    padding: 1rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+
+  .text-section {
+    grid-column: 2 / 14;
+    padding: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0;
+    grid-column: 2 / span 9;
+    margin-bottom: var(--spacing);
+  }
+
+  blockquote p {
+    color: black;
+    background-color: white;
+    font-size: 4rem;
+    display: inline;
+    line-height: 1;
+  }
+
+  .left {
+    grid-column: 6 / 12;
+  }
