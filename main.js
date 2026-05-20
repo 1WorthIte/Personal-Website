@@ -2,6 +2,7 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 
 // Setup
@@ -23,7 +24,7 @@ const focusGroupsConfig = [
   {
     name: 'phone',
     meshNames: [
-    'Body1', 'Body2', 'Body3', 'Body4', 'Body5', 'Body6', 'Body7', 'Body8', 'Body9', 'Body10',
+    'Body1', 'Body2', 'Body3', 'Body4', 'Body5', 'Body6', 'Body8', 'Body9', 'Body10',
     'Body11', 'Body12', 'Body13', 'Body14', 'Body15', 'Body16', 'Body17', 'Body18', 'Body19', 'Body20',
     'Body21', 'Body22', 'Body23', 'Body24', 'Body25', 'Body26', 'Body27', 'Body28', 'Body29', 'Body30',
     'Body31', 'Body32', 'Body33', 'Body34', 'Body35', 'Body36', 'Body37', 'Body38', 'Body39', 'Body40',
@@ -36,12 +37,242 @@ const focusGroupsConfig = [
     targetOffset: new THREE.Vector3(10.4, 15.75, -18.75),
     targetEuler: new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0),
   },
+  /*
   {
     name: 'laptop',
-    meshNames: [],
+    meshNames: [
+    'MeshBody5__1_',
+    'MeshBody5__2_',
+    'MeshBody5__3_',
+    'MeshBody5__4_',
+    'MeshBody5__5_',
+    'MeshBody5__6_',
+    'MeshBody5__7_',
+    'MeshBody5__8_',
+    'MeshBody5__9_',
+    'MeshBody5__10_',
+    'MeshBody5__11_',
+    'MeshBody5__12_',
+    'MeshBody5__13_',
+    'MeshBody5__14_',
+    'MeshBody5__15_',
+    'MeshBody5__16_',
+    'MeshBody5__17_',
+    'MeshBody5__18_',
+    'MeshBody5__19_',
+    'MeshBody5__20_',
+    'MeshBody5__21_',
+    'MeshBody5__22_',
+    'MeshBody5__23_',
+    'MeshBody5__24_',
+    'MeshBody5__25_',
+    'MeshBody5__26_',
+    'MeshBody5__27_',
+    'MeshBody5__28_',
+    'MeshBody5__29_',
+    'MeshBody5__30_',
+    'MeshBody5__31_',
+    'MeshBody5__32_',
+    'MeshBody5__33_',
+    'MeshBody5__34_',
+    'MeshBody5__35_',
+    'MeshBody5__36_',
+    'MeshBody5__37_',
+    'MeshBody5__38_',
+    'MeshBody5__39_',
+    'MeshBody5__40_',
+    'MeshBody5__41_',
+    'MeshBody5__42_',
+    'MeshBody5__43_',
+    'MeshBody5__44_',
+    'MeshBody5__45_',
+    'MeshBody5__46_',
+    'MeshBody5__47_',
+    'MeshBody5__48_',
+    'MeshBody5__49_',
+    'MeshBody5__50_',
+    'MeshBody5__51_',
+    'MeshBody5__52_',
+    'MeshBody5__53_',
+    'MeshBody5__54_',
+    'MeshBody5__55_',
+    'MeshBody5__56_',
+    'MeshBody5__57_',
+    'MeshBody5__58_',
+    'MeshBody5__59_',
+    'MeshBody5__60_',
+    'MeshBody5__61_',
+    'MeshBody5__62_',
+    'MeshBody5__63_',
+    'MeshBody5__64_',
+    'MeshBody5__65_',
+    'MeshBody5__66_',
+    'MeshBody5__67_',
+    'MeshBody5__68_',
+    'MeshBody5__69_',
+    'MeshBody5__70_',
+    'MeshBody5__71_',
+    'MeshBody5__72_',
+    'MeshBody5__73_',
+    'MeshBody5__74_',
+    'MeshBody5__75_',
+    'MeshBody5__76_',
+    'MeshBody5__77_',
+    'MeshBody5__78_',
+    'MeshBody5__79_',
+    'MeshBody5__80_',
+    'MeshBody5__81_',
+    'MeshBody5__82_',
+    'MeshBody5__83_',
+    'MeshBody5__84_',
+    'MeshBody5__85_',
+    'MeshBody5__86_',
+    'MeshBody5__87_',
+    'MeshBody5__88_',
+    'MeshBody5__89_',
+    'MeshBody5__90_',
+    'MeshBody5__91_',
+    'MeshBody5__92_',
+    'MeshBody5__93_',
+    'MeshBody5__94_',
+    'MeshBody5__95_',
+    'MeshBody5__96_',
+    'MeshBody5__97_',
+    'MeshBody5__98_',
+    'MeshBody5__99_',
+    'MeshBody5__100_',
+    'MeshBody5__101_',
+    'MeshBody5__102_',
+    'MeshBody5__103_',
+    'MeshBody5__104_',
+    'MeshBody5__105_',
+    'MeshBody5__106_',
+    'MeshBody5__107_',
+    'MeshBody5__108_',
+    'MeshBody5__109_',
+    'MeshBody5__110_',
+    'MeshBody5__111_',
+    'MeshBody5__112_',
+    'MeshBody5__113_',
+    'MeshBody5__114_',
+    'MeshBody5__115_',
+    'MeshBody5__116_',
+    'MeshBody5__117_',
+    'MeshBody5__118_',
+    'MeshBody5__119_',
+    'MeshBody5__120_',
+    'MeshBody5__121_',
+    'MeshBody5__122_',
+    'MeshBody5__123_',
+    'MeshBody5__124_',
+    'MeshBody5__125_',
+    'MeshBody5__126_',
+    'MeshBody5__127_',
+    'MeshBody5__128_',
+    'MeshBody5__129_',
+    'MeshBody5__130_',
+    'MeshBody5__131_',
+    'MeshBody5__132_',
+    'MeshBody5__133_',
+    'MeshBody5__134_',
+    'MeshBody5__135_',
+    'MeshBody5__136_',
+    'MeshBody5__137_',
+    'MeshBody5__138_',
+    'MeshBody5__139_',
+    'MeshBody5__140_',
+    'MeshBody5__141_',
+    'MeshBody5__142_',
+    'MeshBody5__143_',
+    'MeshBody5__144_',
+    'MeshBody5__145_',
+    'MeshBody5__146_',
+    'MeshBody5__147_',
+    'MeshBody5__148_',
+    'MeshBody5__149_',
+    'MeshBody4__1_',
+    'MeshBody4__2_',
+    'MeshBody4__3_',
+    'MeshBody4__4_',
+    'MeshBody9__0_',
+    'MeshBody9__1_',
+    'MeshBody2',
+    'MeshBody6__1_',
+    'MeshBody6__2_',
+    'MeshBody6__3_',
+    'MeshBody6__4_',
+    'MeshBody6__5_',
+    'MeshBody6__6_',
+    'MeshBody6__7_',
+    'MeshBody6__8_',
+    'MeshBody6__9_',
+    'MeshBody6__10_',
+    'MeshBody6__11_',
+    'MeshBody6__12_',
+    'MeshBody6__13_',
+    'MeshBody6__14_',
+    'MeshBody6__15_',
+    'MeshBody6__16_',
+    'MeshBody6__17_',
+    'MeshBody6__18_',
+    'MeshBody6__19_',
+    'MeshBody6__20_',
+    'MeshBody6__21_',
+    'MeshBody6__22_',
+    'MeshBody6__23_',
+    'MeshBody6__24_',
+    'MeshBody6__25_',
+    'MeshBody6__26_',
+    'MeshBody6__27_',
+    'MeshBody6__28_',
+    'MeshBody6__29_',
+    'MeshBody6__30_',
+    'MeshBody6__31_',
+    'MeshBody6__32_',
+    'MeshBody6__33_',
+    'MeshBody6__34_',
+    'MeshBody6__35_',
+    'MeshBody6__36_',
+    'MeshBody6__37_',
+    'MeshBody6__38_',
+    'MeshBody6__39_',
+    'MeshBody6__40_',
+    'MeshBody6__41_',
+    'MeshBody6__42_',
+    'MeshBody6__43_',
+    'MeshBody6__44_',
+    'MeshBody6__45_',
+    'MeshBody6__46_',
+    'MeshBody6__47_',
+    'MeshBody6__48_',
+    'MeshBody6__49_',
+    'MeshBody6__50_',
+    'MeshBody6__51_',
+    'MeshBody6__52_',
+    'MeshBody6__53_',
+    'MeshBody6__54_',
+    'MeshBody6__55_',
+    'MeshBody6__56_',
+    'MeshBody6__57_',
+    'MeshBody6__58_',
+    'MeshBody6__59_',
+    'MeshBody6__60_',
+    'MeshBody6__61_',
+    'MeshBody6__62_',
+    'MeshBody6__63_',
+    'MeshBody8__2_',
+    'MeshBody8__3_',
+    'MeshBody8__4_',
+    'MeshBody8__5_',
+    'MeshBody8__6_',
+    'MeshBody8__7_',
+    'MeshBody8__8_',
+    'MeshBody8__9_',
+    ],
     targetOffset: new THREE.Vector3(10.4, 16, -19),
     targetEuler: new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0),
   },
+  */
   {
     name: 'resume',
     meshNames: ['Body5_1'],
@@ -50,9 +281,15 @@ const focusGroupsConfig = [
   },
   {
     name: 'degree',
-    meshNames: ['MeshBody1_14'],
+    meshNames: ['MeshBody1_13'],
     targetOffset: new THREE.Vector3(2, -29, -29),
     targetEuler: new THREE.Euler(0, -Math.PI / 2, 0),
+  },
+    {
+    name: 'cert',
+    meshNames: ['Body7'],
+    targetOffset: new THREE.Vector3(-20, -10.5, 25),
+    targetEuler: new THREE.Euler(0, 0, 0),
   },
 ];
 const hoverLabelGroups = [
@@ -69,13 +306,104 @@ const focusConfig = {
   minDistance: 6,
   offset: new THREE.Vector3(0, 0, 0),
 };
+const contactLinks = {
+  phone: 'tel:+14374739401',
+  email: 'mailto:m.khurram@mail.utoronto.ca',
+  linkedin: 'https://www.linkedin.com/in/mahad-khurram',
+  github: 'https://github.com/1WorthIte',
+};
+const phoneRigConfig = {
+  positionOffset: new THREE.Vector3(0, 0.03, 0),
+  rotation: new THREE.Euler(-Math.PI/2, 0.035, Math.PI/2),
+  wallpaperTexturePath: '/textures/phone-wallpaper.JPEG',
+  wallpaperFallbackColor: 0x0b1624,
+  apps: [
+    {
+      name: 'Phone',
+      accent: 0x35f2ff,
+      clickable: true,
+      href: contactLinks.phone,
+      position: new THREE.Vector3(-1.45, 1.2, -0.3),
+    },
+    {
+      name: 'Email',
+      texturePath: '/textures/email-app.png',
+      accent: 0xffc857,
+      clickable: true,
+      href: contactLinks.email,
+      position: new THREE.Vector3(1.45, 1.2, -0.3),
+    },
+    {
+      name: 'LinkedIn',
+      texturePath: '/textures/linkedin-app.png',
+      accent: 0x5fb7ff,
+      clickable: true,
+      href: contactLinks.linkedin,
+      position: new THREE.Vector3(-1.45, -1.2, -0.3),
+    },
+    {
+      name: 'GitHub',
+      texturePath: '/textures/github-app.png',
+      accent: 0xc6cbd6,
+      clickable: true,
+      href: contactLinks.github,
+      position: new THREE.Vector3(1.45, -1.2, -0.3),
+    },
+  ],
+};
 const showNameLabels = false;
 const showTriangleLabels = false;
+const showClickableOutlines = true; // Phone rig outlines will be hidden
+const showLaptopDebugHighlight = true;
+const meshNameHoldKey = 'n';
+const meshTextureDecals = [
+  {
+    meshName: 'Body5_1',
+    texturePath: '/textures/resume9.png',
+    size: new THREE.Vector2(1.4, 1.96),
+    offset: new THREE.Vector3(0, 0, 0.01),
+    euler: new THREE.Euler(Math.PI, Math.PI, 0),
+    opacity: 1,
+  },
+    {
+    meshName: 'MeshBody1_13',
+    texturePath: '/textures/degree.jpg',
+    size: new THREE.Vector2(1.8, 1.3),
+    offset: new THREE.Vector3(0, -0.01, 0),
+    euler: new THREE.Euler(Math.PI, 3*Math.PI/2, Math.PI/2),
+    opacity: 1,
+  },
+  {
+    meshName: 'MeshBody1_16',
+    texturePath: '/textures/pakola.png',
+    size: new THREE.Vector2(2.5, 2),
+    offset: new THREE.Vector3(0.3, 0.3, 0),
+    euler: new THREE.Euler(Math.PI/2, 3*Math.PI/4, 0),
+    opacity: 1,
+  },
+    {
+    meshName: 'Body7',
+    texturePath: '/textures/CS50.png',
+    size: new THREE.Vector2(2, 1.43),
+    offset: new THREE.Vector3(0.01, 0, 0),
+    euler: new THREE.Euler(Math.PI/2, Math.PI/2, 0),
+    opacity: 1,
+  },
+  {
+    meshName: 'pCube1',
+    texturePath: '/textures/DDIA.jpg',
+    size: new THREE.Vector2(1.1, 1.77),
+    offset: new THREE.Vector3(0, -0.062, 0),
+    euler: new THREE.Euler(Math.PI/2, 0, 0.263),
+    opacity: 1,
+  },
+];
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
 const clickableRoots = new Set();
 const clickableHelpers = [];
+const laptopDebugHelpers = [];
 const focusGroupByRoot = new Map();
 const focusGroupByName = new Map(focusGroupsConfig.map((group) => [group.name, group]));
 const originals = new Map();
@@ -93,8 +421,93 @@ let hoverLabelMeshes = [];
 const hoverLabelByMesh = new Map();
 let hoveredLabelMesh = null;
 let hoverLabelHideTimeout = null;
+let meshNameLabels = [];
+let isMeshNameHoldActive = false;
+let areMeshNameLabelsVisible = showNameLabels;
+let areClickableOutlinesVisible = showClickableOutlines;
+let outlineToggleButton = null;
+let meshNameToggleButton = null;
+let axesToggleButton = null;
+const contactButtonMeshes = [];
+let contactButtonRig = null;
 
 let activeFocuses = [];
+let activeCameraReset = null;
+let closeButton = null;
+
+function createCloseButton() {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'close-magnify-button';
+  btn.textContent = '×';
+  btn.setAttribute('aria-label', 'Close magnified view');
+  
+  btn.addEventListener('click', () => {
+    resetAllFocuses();
+  });
+  
+  document.body.appendChild(btn);
+  return btn;
+}
+
+function updateCloseButtonVisibility() {
+  if (!closeButton) return;
+  
+  // Check if there's an active animation
+  if (activeFocuses.length > 0) {
+    closeButton.classList.add('is-visible');
+    return;
+  }
+  
+  // Check if any object is currently magnified (not at original position)
+  let isMagnified = false;
+  for (const [object, original] of originals) {
+    const distFromOriginal = object.position.distanceTo(original.position);
+    if (distFromOriginal > 0.01) {
+      isMagnified = true;
+      break;
+    }
+  }
+  
+  if (isMagnified) {
+    closeButton.classList.add('is-visible');
+  } else {
+    closeButton.classList.remove('is-visible');
+  }
+}
+
+function setMeshNameLabelsVisible(visible) {
+  areMeshNameLabelsVisible = visible;
+  meshNameLabels.forEach((label) => {
+    label.visible = visible;
+  });
+
+  if (meshNameToggleButton) {
+    meshNameToggleButton.textContent = visible ? 'Names: On' : 'Names: Off';
+    meshNameToggleButton.setAttribute('aria-pressed', String(visible));
+  }
+}
+
+function setClickableOutlineVisibility(visible) {
+  areClickableOutlinesVisible = visible;
+  clickableHelpers.forEach((helper) => {
+    helper.visible = visible;
+  });
+
+  if (outlineToggleButton) {
+    outlineToggleButton.textContent = visible ? 'Outlines: On' : 'Outlines: Off';
+    outlineToggleButton.setAttribute('aria-pressed', String(visible));
+  }
+}
+
+function setAxesHelperVisibility(visible) {
+  axesHelper.visible = visible;
+
+  if (axesToggleButton) {
+    axesToggleButton.textContent = visible ? 'Axes: On' : 'Axes: Off';
+    axesToggleButton.setAttribute('aria-pressed', String(visible));
+  }
+}
 
 // CSS2D Renderer for labels
 const labelRenderer = new CSS2DRenderer();
@@ -150,6 +563,7 @@ scene.add(pointLight2);
 
 // Add Axes Helper to visualize X, Y, Z axes
 const axesHelper = new THREE.AxesHelper(1000);  // Size of the axes
+axesHelper.visible = true;
 scene.add(axesHelper);
 
 // Setup OrbitControls
@@ -159,12 +573,299 @@ controls.dampingFactor = 0.05;
 controls.autoRotate = false;
 controls.minDistance = 5;
 controls.maxDistance = 200;
+controls.maxPolarAngle = Math.PI/2;
+controls.minAzimuthAngle = 0;
+controls.maxAzimuthAngle = .62 * Math.PI;
+
 
 // Set initial camera position
 camera.position.set(107, 39, 34);
 controls.target.set(0.00, 0.00, -10.00);
 camera.lookAt(controls.target);
 controls.update();
+
+const initialCameraState = {
+  position: camera.position.clone(),
+  target: controls.target.clone(),
+};
+
+function startCameraReset() {
+  activeCameraReset = {
+    startPos: camera.position.clone(),
+    endPos: initialCameraState.position.clone(),
+    startTarget: controls.target.clone(),
+    endTarget: initialCameraState.target.clone(),
+    startTime: performance.now(),
+    duration: 900,
+  };
+}
+
+function stopCameraMotion() {
+  controls.autoRotate = false;
+  if (controls._sphericalDelta) {
+    controls._sphericalDelta.set(0, 0, 0);
+  }
+  if (controls._panOffset) {
+    controls._panOffset.set(0, 0, 0);
+  }
+  if ('_scale' in controls) {
+    controls._scale = 1;
+  }
+  if ('_controlActive' in controls) {
+    controls._controlActive = false;
+  }
+  if ('state' in controls) {
+    controls.state = -1;
+  }
+}
+
+function createResetButton() {
+  const resetButton = document.createElement('button');
+  resetButton.type = 'button';
+  resetButton.className = 'reset-camera-button';
+  resetButton.textContent = 'Reset';
+  resetButton.setAttribute('aria-label', 'Reset camera view');
+
+  resetButton.addEventListener('click', () => {
+    resetAllFocuses();
+    startCameraReset();
+  });
+
+  document.body.appendChild(resetButton);
+}
+
+function createOutlineToggleButton() {
+  const outlineButton = document.createElement('button');
+  outlineButton.type = 'button';
+  outlineButton.className = 'scene-toggle-button outline-toggle-button';
+  outlineButton.textContent = 'Outlines: Off';
+  outlineButton.setAttribute('aria-pressed', 'false');
+  outlineButton.setAttribute('aria-label', 'Toggle clickable outline helpers');
+
+  outlineButton.addEventListener('click', () => {
+    const nextVisible = !areClickableOutlinesVisible;
+    setClickableOutlineVisibility(nextVisible);
+  });
+
+  outlineToggleButton = outlineButton;
+  document.body.appendChild(outlineButton);
+}
+
+function createMeshNameToggleButton() {
+  const meshNameButton = document.createElement('button');
+  meshNameButton.type = 'button';
+  meshNameButton.className = 'scene-toggle-button mesh-name-toggle-button';
+  meshNameButton.textContent = 'Names: Off';
+  meshNameButton.setAttribute('aria-pressed', 'false');
+  meshNameButton.setAttribute('aria-label', 'Toggle object name labels');
+
+  meshNameButton.addEventListener('click', () => {
+    setMeshNameLabelsVisible(!areMeshNameLabelsVisible);
+  });
+
+  meshNameToggleButton = meshNameButton;
+  document.body.appendChild(meshNameButton);
+}
+
+function createAxesToggleButton() {
+  const axesButton = document.createElement('button');
+  axesButton.type = 'button';
+  axesButton.className = 'scene-toggle-button axes-toggle-button';
+  axesButton.textContent = 'Axes: On';
+  axesButton.setAttribute('aria-pressed', 'true');
+  axesButton.setAttribute('aria-label', 'Toggle X, Y, and Z axes');
+
+  axesButton.addEventListener('click', () => {
+    setAxesHelperVisibility(!axesHelper.visible);
+  });
+
+  axesToggleButton = axesButton;
+  document.body.appendChild(axesButton);
+}
+
+function openContactLink(href) {
+  if (!href) return;
+  window.open(href, '_blank', 'noopener,noreferrer');
+}
+
+function createIconSlotTexture(accent) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+
+  if (!ctx) return null;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const gradient = ctx.createLinearGradient(0, 0, 256, 256);
+  gradient.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+  gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.02)');
+  gradient.addColorStop(1, 'rgba(0, 0, 0, 0.12)');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = accent;
+  ctx.lineWidth = 10;
+  ctx.strokeRect(30, 30, 196, 196);
+
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(48, 48, 160, 160);
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+  ctx.fillRect(84, 84, 88, 88);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
+  return texture;
+}
+
+function createPhoneAppRig({ name, href, accent, clickable, position, texturePath }) {
+  const buttonGroup = new THREE.Group();
+  buttonGroup.name = `phone-app-${name.toLowerCase()}`;
+
+  const body = new THREE.Mesh(
+    new RoundedBoxGeometry(1.88, 1.88, 0.16, 10, 0.12),
+    new THREE.MeshPhysicalMaterial({
+      color: 0x0d1a29,
+      roughness: 0.26,
+      metalness: 0.12,
+      clearcoat: 0.92,
+      clearcoatRoughness: 0.1,
+      transmission: 0.04,
+      transparent: true,
+      opacity: 0.98,
+      depthWrite: false,
+    }),
+  );
+  body.castShadow = true;
+  body.receiveShadow = true;
+  buttonGroup.add(body);
+
+  const iconShell = new THREE.Mesh(
+    new RoundedBoxGeometry(1.42, 1.42, 0.08, 8, 0.08),
+    new THREE.MeshStandardMaterial({
+      color: 0x18283d,
+      roughness: 0.35,
+      metalness: 0.08,
+      emissive: accent,
+      emissiveIntensity: 0.08,
+    }),
+  );
+  iconShell.position.z = 0.045;
+  buttonGroup.add(iconShell);
+
+  const iconSurface = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.18, 1.18),
+    new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      roughness: 0.55,
+      metalness: 0.0,
+      emissive: accent,
+      emissiveIntensity: 0.05,
+      map: createIconSlotTexture(accent),
+      transparent: true,
+      opacity: 0.98,
+      depthWrite: false,
+    }),
+  );
+  iconSurface.position.z = 0.09;
+  buttonGroup.add(iconSurface);
+
+  if (texturePath) {
+    textureLoader.load(
+      texturePath,
+      (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        iconSurface.material.map = texture;
+        iconSurface.material.needsUpdate = true;
+      },
+      undefined,
+      (error) => {
+        console.warn(`Failed to load app texture: ${texturePath}`, error);
+      },
+    );
+  }
+
+  const accentBar = new THREE.Mesh(
+    new RoundedBoxGeometry(0.14, 1.24, 0.06, 4, 0.03),
+    new THREE.MeshStandardMaterial({
+      color: accent,
+      emissive: accent,
+      emissiveIntensity: 0.42,
+      roughness: 0.22,
+      metalness: 0.06,
+    }),
+  );
+  accentBar.position.set(-0.72, 0, 0.085);
+  buttonGroup.add(accentBar);
+
+  buttonGroup.userData.href = href;
+  buttonGroup.userData.clickable = Boolean(clickable);
+  buttonGroup.userData.open = clickable ? () => openContactLink(href) : null;
+  buttonGroup.userData.isContactButton = clickable;
+
+  if (clickable) contactButtonMeshes.push(body);
+  buttonGroup.position.copy(position);
+  return buttonGroup;
+}
+
+function createContactRig(groupRoot) {
+  if (contactButtonRig) {
+    groupRoot.add(contactButtonRig);
+    return contactButtonRig;
+  }
+
+  const panel = new THREE.Group();
+  panel.name = 'contact-rig';
+
+
+
+
+
+  const wallpaper = new THREE.Mesh(
+    new THREE.PlaneGeometry(7.5, 15.7),
+    new THREE.MeshBasicMaterial({
+      color: phoneRigConfig.wallpaperFallbackColor,
+      transparent: true,
+      opacity: 1,
+      depthWrite: false,
+    }),
+  );
+  wallpaper.position.set(0, 0, -0.315);
+  panel.add(wallpaper);
+
+  if (phoneRigConfig.wallpaperTexturePath) {
+    textureLoader.load(
+      phoneRigConfig.wallpaperTexturePath,
+      (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        wallpaper.material.map = texture;
+        wallpaper.material.needsUpdate = true;
+      },
+      undefined,
+      (error) => {
+        console.warn(`Failed to load wallpaper texture: ${phoneRigConfig.wallpaperTexturePath}`, error);
+      },
+    );
+  }
+
+  phoneRigConfig.apps.forEach((appConfig) => {
+    const appRig = createPhoneAppRig(appConfig);
+    panel.add(appRig);
+  });
+
+  contactButtonRig = panel;
+  groupRoot.add(panel);
+  return panel;
+}
+
+createOutlineToggleButton();
+createMeshNameToggleButton();
+createAxesToggleButton();
+createResetButton();
+closeButton = createCloseButton();
 
 // CAMERA TELEMETRY - Press 'C' to log camera/controls data to console
 window.addEventListener('keydown', (event) => {
@@ -196,12 +897,74 @@ window.addEventListener('keydown', (event) => {
     console.log(JSON.stringify(data, null, 2));
     console.log('Copy this and paste into your code to save these camera settings.');
   }
+
+  if (event.key.toLowerCase() === meshNameHoldKey) {
+    if (isMeshNameHoldActive) return;
+    isMeshNameHoldActive = true;
+    setMeshNameLabelsVisible(true);
+  }
+});
+
+window.addEventListener('keyup', (event) => {
+  if (event.key.toLowerCase() !== meshNameHoldKey) return;
+  isMeshNameHoldActive = false;
+  setMeshNameLabelsVisible(areMeshNameLabelsVisible);
+});
+
+window.addEventListener('blur', () => {
+  if (!isMeshNameHoldActive) return;
+  isMeshNameHoldActive = false;
+  setMeshNameLabelsVisible(areMeshNameLabelsVisible);
 });
 
 // LOAD DESK GLB FILE (includes textures and materials)
 const loader = new GLTFLoader();
+const textureLoader = new THREE.TextureLoader();
 
-loader.load('Desk-6-compressed.glb', (gltf) => {
+function addTextureDecal(mesh, decalConfig) {
+  const geometry = mesh.geometry;
+  if (!geometry) return;
+  if (!geometry.boundingBox) geometry.computeBoundingBox();
+  if (!geometry.boundingBox) return;
+
+  const center = new THREE.Vector3();
+  geometry.boundingBox.getCenter(center);
+
+  textureLoader.load(
+    decalConfig.texturePath,
+    (texture) => {
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+      const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        opacity: decalConfig.opacity ?? 1,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+        polygonOffset: true,
+        polygonOffsetFactor: -1,
+        polygonOffsetUnits: -1,
+      });
+
+      const plane = new THREE.Mesh(
+        new THREE.PlaneGeometry(decalConfig.size.x, decalConfig.size.y),
+        material,
+      );
+
+      plane.position.copy(center).add(decalConfig.offset || new THREE.Vector3());
+      if (decalConfig.euler) plane.rotation.copy(decalConfig.euler);
+      plane.renderOrder = 2;
+      mesh.add(plane);
+    },
+    undefined,
+    (error) => {
+      console.warn(`Failed to load texture decal: ${decalConfig.texturePath}`, error);
+    },
+  );
+}
+
+loader.load('Desk-8-compressed.glb', (gltf) => {
   const desk = gltf.scene;
   scene.add(desk);
   desk.position.set(60, 0, -55);
@@ -213,7 +976,7 @@ loader.load('Desk-6-compressed.glb', (gltf) => {
   const meshInfos = []; // { mesh, center: Vector3 (world), triCount }
   let meshCount = 0;
   let triCount = 0;
-  const nameLabels = [];
+  meshNameLabels = [];
 
   desk.traverse((o) => {
     if (o.isMesh) {
@@ -260,6 +1023,7 @@ loader.load('Desk-6-compressed.glb', (gltf) => {
       `;
 
       const label = new CSS2DObject(labelDiv);
+      label.visible = false;
 
       const g = o.geometry;
       if (g) {
@@ -274,16 +1038,27 @@ loader.load('Desk-6-compressed.glb', (gltf) => {
       }
 
       o.add(label);
-      nameLabels.push(label);
+      meshNameLabels.push(label);
     });
+
+    setMeshNameLabelsVisible(areMeshNameLabelsVisible || isMeshNameHoldActive);
   }
 
-  if (showNameLabels) addNameLabels();
+  addNameLabels();
 
   // Build manual focus groups from explicit mesh name lists
   const meshByName = new Map();
   desk.traverse((o) => {
     if (o.isMesh && o.name) meshByName.set(o.name, o);
+  });
+
+  meshTextureDecals.forEach((decalConfig) => {
+    const mesh = meshByName.get(decalConfig.meshName);
+    if (!mesh) {
+      console.warn(`Texture decal mesh not found: ${decalConfig.meshName}`);
+      return;
+    }
+    addTextureDecal(mesh, decalConfig);
   });
 
   hoverLabelGroups.forEach((group) => {
@@ -332,9 +1107,35 @@ loader.load('Desk-6-compressed.glb', (gltf) => {
     clickableRoots.add(groupRoot);
     focusGroupByRoot.set(groupRoot, groupConfig);
 
+    if (showLaptopDebugHighlight && groupConfig.name === 'laptop') {
+      meshes.forEach((mesh) => {
+        const helper = new THREE.BoxHelper(mesh, 0xff3bf5);
+        helper.material.depthTest = false;
+        helper.material.transparent = true;
+        helper.material.opacity = 1;
+        scene.add(helper);
+        laptopDebugHelpers.push(helper);
+      });
+    }
+
     const helper = new THREE.BoxHelper(groupRoot, 0x00ff00);
+    helper.visible = areClickableOutlinesVisible;
     scene.add(helper);
     clickableHelpers.push(helper);
+
+    if (groupConfig.name === 'phone') {
+      const phoneBounds = new THREE.Box3().setFromObject(groupRoot);
+      const phoneCenter = new THREE.Vector3();
+      phoneBounds.getCenter(phoneCenter);
+
+      const phoneRig = createContactRig(groupRoot);
+      phoneRig.position.set(
+        phoneCenter.x + phoneRigConfig.positionOffset.x,
+        phoneBounds.max.y + phoneRigConfig.positionOffset.y,
+        phoneCenter.z + phoneRigConfig.positionOffset.z,
+      );
+      phoneRig.rotation.copy(phoneRigConfig.rotation);
+    }
   });
 
   console.log({ meshCount, triCount });
@@ -506,6 +1307,7 @@ function startFocus(object) {
     startTime: performance.now(),
     duration: focusConfig.durationMs,
   });
+  updateCloseButtonVisibility();
 }
 
 function resetAllFocuses() {
@@ -523,16 +1325,31 @@ function resetAllFocuses() {
       duration: focusConfig.durationMs,
     });
   });
+  updateCloseButtonVisibility();
 }
 
 function onPointerDown(event) {
-  if (!clickableRoots.size) return;
-
   const rect = renderer.domElement.getBoundingClientRect();
   pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
   raycaster.setFromCamera(pointer, camera);
+  const buttonIntersects = raycaster.intersectObjects(contactButtonMeshes, true);
+  if (buttonIntersects.length) {
+    let contactMesh = buttonIntersects[0].object;
+    while (contactMesh && !contactMesh.userData?.isContactButton) {
+      contactMesh = contactMesh.parent;
+    }
+
+    if (contactMesh?.userData?.open) {
+      resetAllFocuses();
+      contactMesh.userData.open();
+      return;
+    }
+  }
+
+  if (!clickableRoots.size) return;
+
   const intersects = raycaster.intersectObjects(Array.from(clickableRoots), true);
   if (!intersects.length) {
     let hitboxClicked = false;
@@ -544,7 +1361,18 @@ function onPointerDown(event) {
       }
     }
     if (hitboxClicked) return;
-    resetAllFocuses();
+    
+    // Only reset if something is actually magnified
+    let isMagnified = false;
+    for (const [object, original] of originals) {
+      if (object.position.distanceTo(original.position) > 0.01) {
+        isMagnified = true;
+        break;
+      }
+    }
+    if (isMagnified) {
+      resetAllFocuses();
+    }
     return;
   }
 
@@ -555,9 +1383,15 @@ function onPointerDown(event) {
   const original = originals.get(root);
   if (original) {
     const distFromOriginal = root.position.distanceTo(original.position);
-    if (distFromOriginal > 0.01) return;
+    if (distFromOriginal > 0.01) {
+      resetAllFocuses();
+      return;
+    }
   }
 
+  stopCameraMotion();
+  controls.update();
+  resetAllFocuses();
   startFocus(root);
 }
 
@@ -605,6 +1439,9 @@ renderer.domElement.addEventListener('pointermove', onPointerMove);
 
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') resetAllFocuses();
+  if (event.key.toLowerCase() === 'o') {
+    setClickableOutlineVisibility(!areClickableOutlinesVisible);
+  }
 });
 
 // Animation Loop
@@ -614,6 +1451,10 @@ function animate() {
 
   if (clickableHelpers.length) {
     clickableHelpers.forEach((helper) => helper.update());
+  }
+
+  if (laptopDebugHelpers.length) {
+    laptopDebugHelpers.forEach((helper) => helper.update());
   }
 
   if (hoverLabel && hoveredLabelMesh) {
@@ -637,7 +1478,18 @@ function animate() {
       return t < 1;
     });
   }
+  updateCloseButtonVisibility();
+  if (activeCameraReset) {
+    const elapsed = performance.now() - activeCameraReset.startTime;
+    const t = Math.min(elapsed / activeCameraReset.duration, 1);
+    const eased = easeInOutCubic(t);
 
+    camera.position.lerpVectors(activeCameraReset.startPos, activeCameraReset.endPos, eased);
+    controls.target.lerpVectors(activeCameraReset.startTarget, activeCameraReset.endTarget, eased);
+
+    if (t >= 1) activeCameraReset = null;
+  }
+  
   controls.update();
 
   renderer.render(scene, camera);

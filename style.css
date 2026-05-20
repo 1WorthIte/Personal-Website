@@ -65,6 +65,199 @@ canvas {
   box-shadow: 0 0 10px rgba(53, 242, 255, 0.8);
 }
 
+.reset-camera-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  padding: 10px 14px;
+  border: 1px solid #35f2ff;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(10, 25, 40, 0.9), rgba(8, 60, 80, 0.72));
+  color: #d9fbff;
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 0 12px rgba(53, 242, 255, 0.55),
+    inset 0 0 8px rgba(53, 242, 255, 0.25);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.reset-camera-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 16px rgba(53, 242, 255, 0.75),
+    inset 0 0 10px rgba(53, 242, 255, 0.35);
+}
+
+.reset-camera-button:active {
+  transform: translateY(0);
+}
+
+.scene-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  z-index: 20;
+  padding: 10px 14px;
+  border: 1px solid #35f2ff;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(10, 25, 40, 0.9), rgba(8, 60, 80, 0.72));
+  color: #d9fbff;
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 0 12px rgba(53, 242, 255, 0.4),
+    inset 0 0 8px rgba(53, 242, 255, 0.18);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.scene-toggle-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 16px rgba(53, 242, 255, 0.58),
+    inset 0 0 10px rgba(53, 242, 255, 0.28);
+}
+
+.scene-toggle-button:active {
+  transform: translateY(0);
+}
+
+.close-magnify-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 30;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #35f2ff;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(10, 25, 40, 0.9), rgba(8, 60, 80, 0.72));
+  color: #d9fbff;
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow:
+    0 0 16px rgba(53, 242, 255, 0.6),
+    inset 0 0 10px rgba(53, 242, 255, 0.3);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, opacity 200ms ease;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close-magnify-button.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-magnify-button:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 20px rgba(53, 242, 255, 0.8),
+    inset 0 0 12px rgba(53, 242, 255, 0.4);
+}
+
+.close-magnify-button:active {
+  transform: scale(0.95);
+}
+
+.outline-toggle-button {
+  left: 20px;
+}
+
+.mesh-name-toggle-button {
+  left: 20px;
+  bottom: 64px;
+}
+
+.axes-toggle-button {
+  left: 20px;
+  bottom: 108px;
+}
+
+.contact-panel-title {
+  position: relative;
+  transform: translate(-50%, -50%);
+  font-family: elevon, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #d9fbff;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(53, 242, 255, 0.75),
+    0 0 18px rgba(36, 140, 255, 0.35);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.contact-button-label {
+  position: relative;
+  transform: translate(-50%, -50%);
+  min-width: 180px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(8, 18, 30, 0.82), rgba(12, 32, 52, 0.62));
+  border: 1px solid rgba(120, 227, 255, 0.4);
+  box-shadow:
+    0 0 14px rgba(53, 242, 255, 0.18),
+    inset 0 0 8px rgba(255, 255, 255, 0.04);
+  color: #eefcff;
+  font-family: elevon, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.contact-button-label__title {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.contact-button-label__detail {
+  display: block;
+  margin-top: 3px;
+  font-family: brandon-grotesque, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(217, 251, 255, 0.84);
+  text-transform: none;
+}
+
+.phone-app-label {
+  position: relative;
+  transform: translate(-50%, 0);
+  margin-top: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(5, 12, 20, 0.55);
+  border: 1px solid rgba(120, 227, 255, 0.18);
+  color: #eafcff;
+  font-family: elevon, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 0 8px rgba(53, 242, 255, 0.34);
+}
 
 :root {
   --spacing: 0px;
